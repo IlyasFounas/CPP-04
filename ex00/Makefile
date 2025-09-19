@@ -1,26 +1,25 @@
 NAME = ClapTrap
 
-INCLUDES = includes
-SRC = $(wildcard *.cpp)
-OBJ = $(SRC:.cpp=.o)
+SRC =   Animal.cpp \
+		Cat.cpp \
+		Dog.cpp \
+		main.cpp
 
 CXX = c++
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -I$(INCLUDES)
+
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 all: $(NAME)
 
-$(NAME): $(OBJ)
-	$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJ)
-
-%.o: %.cpp
-	$(CXX) $(CXXFLAGS) -c $< -o $@
+$(NAME): $(SRC)
+	$(CXX) $(CXXFLAGS) -o $(NAME) $(SRC)
 
 clean:
-	rm -f $(OBJ)
+	rm -f $(NAME)
 
 fclean: clean
-	rm -f $(NAME)
 
 re: fclean all
 
 .PHONY: all clean fclean re
+
