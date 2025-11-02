@@ -2,7 +2,7 @@
 
 WrongCat::WrongCat() : WrongAnimal()
 {
-    this->type = "WrongCat";
+    this->_type = "WrongCat";
     std::cout << "WrongCat created" << std::endl;
 }
 
@@ -20,7 +20,7 @@ WrongCat::~WrongCat()
 WrongCat &WrongCat::operator=(const WrongCat &other)
 {
     if (this != &other)
-        this->type = other.type;
+        this->_type = other._type;
     return (*this);
 }
 

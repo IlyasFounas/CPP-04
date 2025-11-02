@@ -17,7 +17,7 @@ class Animal {
         virtual void makeSound() const;
 
     protected:
-        std::string type;
+        std::string _type;
 } ;
 
 #endif

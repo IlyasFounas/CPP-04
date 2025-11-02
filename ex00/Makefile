@@ -1,25 +1,31 @@
-NAME = ClapTrap
+NAME = animal
 
-SRC =   Animal.cpp \
+HEADER = Animal.hpp
+SRC = Animal.cpp \
 		Cat.cpp \
 		Dog.cpp \
+		WrongAnimal.cpp \
+		WrongCat.cpp \
 		main.cpp
+OBJ = $(SRC:.cpp=.o)
 
 CXX = c++
-
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 all: $(NAME)
 
-$(NAME): $(SRC)
-	$(CXX) $(CXXFLAGS) -o $(NAME) $(SRC)
+$(NAME): $(OBJ)
+	$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJ)
+
+%.o: %.cpp $(HEADER)
+	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 clean:
-	rm -f $(NAME)
+	rm -f $(OBJ)
 
 fclean: clean
+	rm -f $(NAME)
 
 re: fclean all
 
 .PHONY: all clean fclean re
-

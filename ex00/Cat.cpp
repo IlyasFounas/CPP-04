@@ -14,7 +14,7 @@ Cat::Cat(const Cat &other) : Animal(other) {
 Cat &Cat::operator=(const Cat &other)
 {
     if (this != &other)
-        this->type = other.type;
+        this->_type = other._type;
     return (*this);
 }
 
