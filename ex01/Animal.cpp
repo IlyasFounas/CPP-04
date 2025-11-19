@@ -3,13 +3,13 @@
 Animal::Animal()
 {
     std::cout << "default animal created" << std::endl;
-    this->type = "Default";
+    this->_type = "Default";
 }
 
 Animal::Animal(const std::string type)
 {
     std::cout << type << " created" << std::endl;
-    this->type = type;
+    this->_type = type;
 }
 
 Animal::Animal(const Animal &other)
@@ -22,7 +22,7 @@ Animal &Animal::operator=(const Animal &other)
 {
     if (this != &other)
     {
-        this->type = other.type;
+        this->_type = other._type;
     }
     return (*this);
 }
@@ -35,7 +35,7 @@ Animal::~Animal()
 
 std::string Animal::getType() const
 {
-    return (this->type);
+    return (this->_type);
 }
 
 void Animal::makeSound() const
