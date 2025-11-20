@@ -11,11 +11,12 @@ class Dog  : public Animal {
         Dog &operator=(const Dog &other);
         ~Dog();
 
+        // function member
         void makeSound() const;
         Brain* getBrain() const;
-        
+    
     private:
-        Brain *brain;
+        Brain *_brain;
 };
 
 #endif

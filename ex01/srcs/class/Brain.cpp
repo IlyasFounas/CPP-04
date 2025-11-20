@@ -36,9 +36,6 @@ void Brain::add(const std::string idea)
 std::string Brain::get(int nbIndex)
 {
     if (nbIndex < 0 || nbIndex >= 100)
-    {
-        std::cout << "Wrong Index" << std::endl;
-        return (NULL);
-    }
+        return ("Wrong Index");
     return (this->ideas[nbIndex]);
 }
