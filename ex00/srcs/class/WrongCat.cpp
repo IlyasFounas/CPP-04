@@ -1,14 +1,14 @@
 #include "WrongCat.hpp"
 
-WrongCat::WrongCat() : WrongAnimal()
+WrongCat::WrongCat() : WrongAnimal("WrongCat")
 {
     this->_type = "WrongCat";
-    std::cout << "WrongCat created" << std::endl;
+    std::cout << "Default WrongCat created" << std::endl;
 }
 
 WrongCat::WrongCat(const WrongCat &other) : WrongAnimal(other)
 {
-
+    std::cout << "WrongCat copy constructor called" << std::endl;
     *this = other;
 }
 

@@ -2,7 +2,7 @@
 
 Dog::Dog() : Animal("Dog")
 {
-    std::cout << "Dog created" << std::endl;
+    std::cout << "Default Dog created" << std::endl;
 }
 
 Dog::Dog(const Dog &other) : Animal(other)
