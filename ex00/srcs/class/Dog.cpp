@@ -1,6 +1,6 @@
 #include "Dog.hpp"
 
-Dog::Dog() : Animal("Dog")
+Dog::Dog() : Animal("dog")
 {
     std::cout << "Default Dog created" << std::endl;
 }
