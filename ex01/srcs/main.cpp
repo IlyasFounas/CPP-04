@@ -42,6 +42,7 @@ int main(void)
     Animal* objs[NB_ANIMALS + 1];
     Cat *c1 = new Cat();
     Dog *d1 = new Dog();
+    Animal not_abstract_animal;
 
     std::cout << std::endl << "__________INIT__________" << std::endl;
     for (int i = 0; i < NB_ANIMALS; i++)

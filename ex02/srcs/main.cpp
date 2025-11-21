@@ -41,6 +41,7 @@ int main(void)
 {
     Animal* objs[NB_ANIMALS + 1];
     Cat *c1 = new Cat();
+    Cat *c2 = new Cat();
     Dog *d1 = new Dog();
 
     std::cout << std::endl << "__________INIT__________" << std::endl;
@@ -62,11 +63,16 @@ int main(void)
 
     toMuchThinking(NULL, c1);
     toMuchThinking(d1, NULL);
+
+    *c2 = *c1;
+    std::cout << std::endl << "print c2 ideas after a surcharge operator" << std::endl;
+    toMuchThinking(NULL, c2);
     std::cout << "_____________________________" << std::endl << std::endl;
 
     for (int j = 0; j < NB_ANIMALS; j++)
         delete objs[j];
     delete c1;
+    delete c2;
     delete d1;
     return (0);
 }

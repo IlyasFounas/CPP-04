@@ -1,4 +1,4 @@
-NAME = brain
+NAME = abstract
 
 INCLUDES = inc
 SRCS = srcs/
