@@ -1,4 +1,4 @@
-NAME = abstract
+NAME = bonus
 
 INCLUDES = inc
 SRCS = srcs/

@@ -1,8 +1,13 @@
 #include "AMateria.hpp"
 
-AMateria::AMateria(const std::string &type) : _type(type)
+AMateria::AMateria() : _type("default")
 {
     std::cout << "default AMateria" << std::endl;
+}
+
+AMateria::AMateria(const std::string &type) : _type(type)
+{
+    std::cout << "default name AMateria" << std::endl;
 }
 
 AMateria::AMateria(const AMateria &copy)

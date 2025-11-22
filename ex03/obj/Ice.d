@@ -1,0 +1,8 @@
+obj/Ice.o: srcs/class/Ice.cpp inc/Ice.hpp inc/AMateria.hpp \
+  inc/ICharacter.hpp
+
+inc/Ice.hpp:
+
+inc/AMateria.hpp:
+
+inc/ICharacter.hpp:
