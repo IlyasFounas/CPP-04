@@ -2,13 +2,11 @@
 
 Ice::Ice() : AMateria("ice")
 {
-    std::cout << "default Ice" << std::endl;
 }
 
 Ice::Ice(const Ice &copy)
 {
     *this = copy;
-    std::cout << "copy Ice" << std::endl;
 }
 
 Ice &Ice::operator=(const Ice &copy)
@@ -22,7 +20,6 @@ Ice &Ice::operator=(const Ice &copy)
 
 Ice::~Ice()
 {
-    std::cout << "Ice destroyed" << std::endl;
 }
 
 void Ice::use(ICharacter& target)

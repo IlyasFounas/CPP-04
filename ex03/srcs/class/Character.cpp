@@ -4,14 +4,12 @@ Character::Character() : _name("bot")
 {
     for (int i = 0; i < 4; i++)
         this->_slots[i] = NULL;
-    std::cout << "default Character" << std::endl;
 }
 
 Character::Character(const std::string &name) : _name(name)
 {
     for (int i = 0; i < 4; i++)
         this->_slots[i] = NULL;
-    std::cout << "default name Character" << std::endl;
 }
 
 Character::Character(const Character &copy)
@@ -24,7 +22,6 @@ Character::Character(const Character &copy)
             this->_slots[i] = NULL;
     }
     *this = copy;
-    std::cout << "copy Character" << std::endl;
 }
 
 Character &Character::operator=(const Character &copy)
@@ -51,7 +48,6 @@ Character::~Character()
     for (int i = 0; i < 4; i++)
         if (this->_slots[i])
             delete this->_slots[i];
-    std::cout << "Character destroyed" << std::endl;
 }
 
 std::string const &Character::getName() const

@@ -2,18 +2,15 @@
 
 AMateria::AMateria() : _type("default")
 {
-    std::cout << "default AMateria" << std::endl;
 }
 
 AMateria::AMateria(const std::string &type) : _type(type)
 {
-    std::cout << "default name AMateria" << std::endl;
 }
 
 AMateria::AMateria(const AMateria &copy)
 {
     *this = copy;
-    std::cout << "copy AMateria" << std::endl;
 }
 
 AMateria &AMateria::operator=(const AMateria &copy)
@@ -27,7 +24,6 @@ AMateria &AMateria::operator=(const AMateria &copy)
 
 AMateria::~AMateria()
 {
-    std::cout << "AMateria destroyed" << std::endl;
 }
 
 std::string const &AMateria::getType() const

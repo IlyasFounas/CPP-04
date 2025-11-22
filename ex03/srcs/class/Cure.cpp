@@ -2,13 +2,11 @@
 
 Cure::Cure() : AMateria("cure")
 {
-    std::cout << "default Cure" << std::endl;
 }
 
 Cure::Cure(const Cure &copy)
 {
     *this = copy;
-    std::cout << "copy Cure" << std::endl;
 }
 
 Cure &Cure::operator=(const Cure &copy)
@@ -22,7 +20,6 @@ Cure &Cure::operator=(const Cure &copy)
 
 Cure::~Cure()
 {
-    std::cout << "Cure destroyed" << std::endl;
 }
 
 void Cure::use(ICharacter& target)
