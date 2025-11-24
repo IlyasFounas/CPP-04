@@ -61,6 +61,11 @@ void Character::equip(AMateria *m)
     int add = 1;
     int check_index = 0;
 
+    if (!m)
+    {
+        std::cout << "The passed materia is null" << std::endl;
+        return ;
+    }
     while (check_index < 4)
     {
         if (this->_slots[check_index] == m)

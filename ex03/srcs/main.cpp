@@ -9,17 +9,23 @@ int main(void)
     ICharacter* me = new Character("me");
     ICharacter* bob = new Character("bob");
     AMateria* tmp;
+    AMateria* tmp1;
     AMateria* tmp2;
 
     src->learnMateria(new Ice());
+    src->learnMateria(NULL);
     src->learnMateria(new Cure());
+    src->learnMateria(new Cure());
+    src->learnMateria(new Cure());
+    std::cout << std::endl;
 
     tmp = src->createMateria("ice");
     me->equip(tmp);
-    tmp = src->createMateria("cure");
+    tmp1 = src->createMateria("cure");
     tmp2 = src->createMateria("cure");
-    me->equip(tmp);
-    me->equip(tmp);
+    me->unequip(-100);
+    me->equip(tmp1);
+    me->equip(tmp1);
     me->equip(tmp2);
 
     me->use(0, *bob);
@@ -28,5 +34,6 @@ int main(void)
     delete bob;
     delete me;
     delete src;
+    // delete tmp;
     return 0;
 }

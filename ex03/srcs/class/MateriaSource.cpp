@@ -47,6 +47,11 @@ void MateriaSource::learnMateria(AMateria *m)
 {
     int i = 0;
 
+    if (!m)
+    {
+        std::cout << "The passed materia is null" << std::endl;
+        return ;
+    }
     while (i < 4)
     {
         if (!this->_tank[i])
@@ -57,7 +62,8 @@ void MateriaSource::learnMateria(AMateria *m)
         }
         i++;
     }
-    std::cout << "The tank is full" << std::endl;
+    std::cout << "The learn_space is full" << std::endl;
+    delete m;
 }
 
 AMateria* MateriaSource::createMateria(std::string const &type)
