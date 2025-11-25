@@ -46,10 +46,26 @@ MateriaSource::~MateriaSource()
 void MateriaSource::learnMateria(AMateria *m)
 {
     int i = 0;
+    int add = 1;
+    int check_index = 0;
 
     if (!m)
     {
         std::cout << "The passed materia is null" << std::endl;
+        return ;
+    }
+    while (check_index < 4)
+    {
+        if (this->_tank[check_index] == m)
+        {
+            add = 0;
+            break ;
+        }
+        check_index++;
+    }
+    if (add == 0)
+    {
+        std::cout << "Error this Materia pointer is already learned" << std::endl;
         return ;
     }
     while (i < 4)
@@ -62,7 +78,7 @@ void MateriaSource::learnMateria(AMateria *m)
         }
         i++;
     }
-    std::cout << "The learn_space is full" << std::endl;
+    std::cout << "The storage is full" << std::endl;
     delete m;
 }
 

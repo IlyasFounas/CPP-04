@@ -12,9 +12,10 @@ int main(void)
     AMateria* tmp1;
     AMateria* tmp2;
 
-    src->learnMateria(new Ice());
+    AMateria* ice = new Ice();
+    src->learnMateria(ice);
     src->learnMateria(NULL);
-    src->learnMateria(new Cure());
+    src->learnMateria(ice);
     src->learnMateria(new Cure());
     src->learnMateria(new Cure());
     std::cout << std::endl;

@@ -90,7 +90,7 @@ void Character::equip(AMateria *m)
         }
         i++;
     }
-    std::cout << "You havn't slots left" << std::endl;
+    std::cout << "You don't have any slots left" << std::endl;
 }
 
 void Character::unequip(int idx)
