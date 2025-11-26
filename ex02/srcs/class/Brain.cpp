@@ -6,7 +6,7 @@ Brain::Brain()
     std::cout << "Brain created" << std::endl;
 }
 
-Brain::Brain(const Brain &copy)
+Brain::Brain(const Brain &copy) : index(0)
 {
     *this = copy;
     std::cout << "copy constructor called on brain" << std::endl;
@@ -20,8 +20,12 @@ Brain::~Brain()
 Brain &Brain::operator=(const Brain &copy)
 {
     if (this != &copy)
+    {
         for (int i = 0; i < 100; i++)
             this->ideas[i] = copy.ideas[i];
+        this->index = copy.index;
+    }
+        
     return *this;
 }
 

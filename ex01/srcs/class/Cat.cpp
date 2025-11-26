@@ -5,9 +5,10 @@ Cat::Cat() : Animal("cat"), _brain(new Brain())
     std::cout << "Default Cat created" << std::endl;
 }
 
-Cat::Cat(const Cat &other) : Animal(other) {
-    std::cout << "Cat copy constructor called" << std::endl;
+Cat::Cat(const Cat &other) : Animal(other), _brain(NULL)
+{
     *this = other;
+    std::cout << "Cat copy constructor called" << std::endl;
 }
 
 Cat &Cat::operator=(const Cat &other)

@@ -2,7 +2,7 @@
 #include "Cat.hpp"
 #include "Dog.hpp"
 
-#define NB_ANIMALS 4
+#define NB_ANIMALS 6
 
 void printTests(Animal **objs)
 {
@@ -44,13 +44,26 @@ int main(void)
     Cat *c2 = new Cat();
     Dog *d1 = new Dog();
 
+    std::cout << std::endl << "__________BASIC TESTS__________" << std::endl;
+    Dog basic;
+    {
+        basic.getBrain()->add("SALUT");
+        Dog tmp = basic;
+        std::cout << std::endl;
+        std::cout << tmp.getBrain()->get(0) << std::endl;
+        std::cout << tmp.getBrain()->get(-132) << std::endl;
+        std::cout << std::endl;
+    }
+
+    
     std::cout << std::endl << "__________INIT__________" << std::endl;
     for (int i = 0; i < NB_ANIMALS; i++)
     {
-        if (i > NB_ANIMALS / 2)
+        if (i >= NB_ANIMALS / 2)
             objs[i] = new Cat();
         else
             objs[i] = new Dog();
+        std::cout << std::endl;
     }
     std::cout << "___________SOME TESTS_________" << std::endl << std::endl;
 

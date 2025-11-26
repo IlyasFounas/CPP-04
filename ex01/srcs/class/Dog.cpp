@@ -5,10 +5,10 @@ Dog::Dog() : Animal("dog"), _brain(new Brain())
     std::cout << "Default Dog created" << std::endl;
 }
 
-Dog::Dog(const Dog &other) : Animal(other)
+Dog::Dog(const Dog &other) : Animal(other), _brain(NULL)
 {
-    std::cout << "Dog copy constructor called" << std::endl;
     *this = other;
+    std::cout << "Dog copy constructor called" << std::endl;
 }
 
 Dog &Dog::operator=(const Dog &other)

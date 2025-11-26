@@ -8,8 +8,8 @@ WrongCat::WrongCat() : WrongAnimal("WrongCat")
 
 WrongCat::WrongCat(const WrongCat &other) : WrongAnimal(other)
 {
-    std::cout << "WrongCat copy constructor called" << std::endl;
     *this = other;
+    std::cout << "WrongCat copy constructor called" << std::endl;
 }
 
 WrongCat::~WrongCat()

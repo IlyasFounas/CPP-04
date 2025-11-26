@@ -16,7 +16,7 @@ OBJ = $(patsubst %.cpp, $(OBJ_DIR)/%.o, $(notdir $(SRC)))
 DEP = $(OBJ:.o=.d)
 
 CXX = c++
-CXXFLAGS = -Wall -Wextra -Werror -Wno-shadow -std=c++98 -I$(INCLUDES) -MMD -MP
+CXXFLAGS = -Wall -Wextra -Werror -Wno-shadow -std=c++98 -g3 -I$(INCLUDES) -MMD -MP
 
 all: $(NAME)
 
