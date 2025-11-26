@@ -28,7 +28,10 @@ Brain &Brain::operator=(const Brain &copy)
 void Brain::add(const std::string idea)
 {
     if (this->index == 100)
+    {
+        std::cout << "To much ideas" << std::endl;
         return ;
+    }
     this->ideas[this->index] = idea;
     this->index++;
 }

@@ -39,19 +39,32 @@ void toMuchThinking(Dog *dog, Cat *cat)
 
 int main(void)
 {
+    std::cout << std::endl << "__________BASIC INIT__________" << std::endl;
     Animal* objs[NB_ANIMALS + 1];
     Cat *c1 = new Cat();
     Dog *d1 = new Dog();
-    Animal not_abstract_animal;
 
-    std::cout << std::endl << "__________INIT__________" << std::endl;
+    std::cout << std::endl << "__________INIT TAB__________" << std::endl;
     for (int i = 0; i < NB_ANIMALS; i++)
     {
-        if (i > NB_ANIMALS / 2)
+        if (i >= NB_ANIMALS / 2)
             objs[i] = new Cat();
         else
             objs[i] = new Dog();
+        std::cout << std::endl;
     }
+        
+    std::cout << std::endl << "__________BASIC TESTS__________" << std::endl;
+    Dog basic;
+    {
+        basic.getBrain()->add("SALUT");
+        Dog tmp = basic;
+        std::cout << std::endl;
+        std::cout << tmp.getBrain()->get(0) << std::endl;
+        std::cout << tmp.getBrain()->get(-132) << std::endl;
+        std::cout << std::endl;
+    }
+    
     std::cout << "___________SOME TESTS_________" << std::endl << std::endl;
 
     printTests(objs);
@@ -59,7 +72,8 @@ int main(void)
     c1->getBrain()->add("can I fly ?");
     c1->getBrain()->add("how bdd are working ?");
     d1->getBrain()->add("I'm hungry");
-    d1->getBrain()->add("I prefer C over C++, woof");
+    for (int i = 0; i < 25; i++)
+        d1->getBrain()->add("I prefer C over C++, woof");
 
     toMuchThinking(NULL, c1);
     toMuchThinking(d1, NULL);
