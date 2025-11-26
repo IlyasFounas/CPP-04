@@ -3,18 +3,29 @@
 #include "Character.hpp"
 #include "MateriaSource.hpp"
 
+void crash_test()
+{
+    IMateriaSource* alt = new MateriaSource();
+    AMateria* ice = new Ice();
+
+    alt->learnMateria(ice);
+    alt->learnMateria(ice);
+    alt->learnMateria(NULL);
+
+    delete alt;
+}
+
 int main(void)
 {
     IMateriaSource* src = new MateriaSource();
-    ICharacter* me = new Character("me");
+    ICharacter* me = new Character("Faker");
     ICharacter* bob = new Character("bob");
+    AMateria* ice = new Ice();
     AMateria* tmp;
     AMateria* tmp1;
     AMateria* tmp2;
 
-    AMateria* ice = new Ice();
-    src->learnMateria(ice);
-    src->learnMateria(NULL);
+    std::cout << "Player name : " << me->getName() << std::endl;
     src->learnMateria(ice);
     src->learnMateria(new Cure());
     src->learnMateria(new Cure());
@@ -32,9 +43,10 @@ int main(void)
     me->use(0, *bob);
     me->use(1, *bob);
 
+    std::cout << "___________CRASH TESTS SECTION___________" << std::endl;
+    crash_test();
     delete bob;
     delete me;
     delete src;
-    // delete tmp;
     return 0;
 }
