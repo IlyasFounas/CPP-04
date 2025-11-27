@@ -6,6 +6,7 @@
 
 void printTests(Animal **objs)
 {
+    std::cout << "__________TAB TEST__________" << std::endl << std::endl;
     for (int i = 0; i < NB_ANIMALS; i++)
     {
         std::cout << objs[i]->getType() << " " << std::endl;
@@ -54,7 +55,7 @@ int main(void)
         std::cout << std::endl;
     }
         
-    std::cout << std::endl << "__________BASIC TESTS__________" << std::endl;
+    std::cout << "__________BASIC TESTS__________" << std::endl;
     Dog basic;
     {
         basic.getBrain()->add("SALUT");
@@ -65,9 +66,9 @@ int main(void)
         std::cout << std::endl;
     }
     
+    printTests(objs);
     std::cout << "___________SOME TESTS_________" << std::endl << std::endl;
 
-    printTests(objs);
     c1->getBrain()->add("Is cpp easy to learn ?");
     c1->getBrain()->add("can I fly ?");
     c1->getBrain()->add("how bdd are working ?");
