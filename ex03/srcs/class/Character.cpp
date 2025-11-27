@@ -1,6 +1,6 @@
 #include "Character.hpp"
 
-Character::Character() : _name("bot")
+Character::Character() : _name("default_bot")
 {
     for (int i = 0; i < 4; i++)
         this->_slots[i] = NULL;
